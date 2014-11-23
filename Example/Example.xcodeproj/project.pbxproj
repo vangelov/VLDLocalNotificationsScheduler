@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		75B6B30F1A22348E00F33122 /* LICENSE.text in Sources */ = {isa = PBXBuildFile; fileRef = 75B6B30E1A22348E00F33122 /* LICENSE.text */; };
 		75F367621A0FD14F00247BFE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75F367611A0FD14F00247BFE /* Foundation.framework */; };
 		75F367641A0FD15000247BFE /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75F367631A0FD15000247BFE /* CoreGraphics.framework */; };
 		75F367661A0FD15000247BFE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75F367651A0FD15000247BFE /* UIKit.framework */; };
@@ -40,6 +41,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		75B6B30E1A22348E00F33122 /* LICENSE.text */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = LICENSE.text; sourceTree = "<group>"; };
 		75F3675E1A0FD14F00247BFE /* Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		75F367611A0FD14F00247BFE /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		75F367631A0FD15000247BFE /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -198,6 +200,7 @@
 				75F3679A1A0FD1B800247BFE /* FMDB.h */,
 				75F3679B1A0FD1B800247BFE /* FMResultSet.h */,
 				75F3679C1A0FD1B800247BFE /* FMResultSet.m */,
+				75B6B30E1A22348E00F33122 /* LICENSE.text */,
 			);
 			path = fmdb;
 			sourceTree = "<group>";
@@ -306,6 +309,7 @@
 				75F3679F1A0FD1B800247BFE /* FMDatabasePool.m in Sources */,
 				75F367721A0FD15000247BFE /* VLDAppDelegate.m in Sources */,
 				75F3679E1A0FD1B800247BFE /* FMDatabaseAdditions.m in Sources */,
+				75B6B30F1A22348E00F33122 /* LICENSE.text in Sources */,
 				75F367A01A0FD1B800247BFE /* FMDatabaseQueue.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

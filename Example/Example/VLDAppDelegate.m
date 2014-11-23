@@ -23,7 +23,24 @@
     [self.window makeKeyAndVisible];
     
     self.scheduler = [[VLDLocalNotificationsScheduler alloc] init];
-   
+    
+    if ([UIApplication instancesRespondToSelector: @selector(registerUserNotificationSettings:)] &&
+        !([UIApplication sharedApplication].currentUserNotificationSettings.types & UIUserNotificationTypeAlert)) {
+        
+        UIUserNotificationSettings *settings = [UIUserNotificationSettings settingsForTypes: UIUserNotificationTypeAlert
+                                                                                 categories: nil];
+        
+        [[UIApplication sharedApplication] registerUserNotificationSettings: settings];
+        
+    }
+    else {
+        [self scheduleTestLocalNotification];
+    }
+    
+    return YES;
+}
+
+- (void) scheduleTestLocalNotification {
     [self.scheduler perform: ^(VLDLocalNotificationsTransaction *transaction) {
         UILocalNotification *localNotification = [[UILocalNotification alloc] init];
         localNotification.fireDate = [[NSDate date] dateByAddingTimeInterval: 10];
@@ -32,8 +49,10 @@
         [transaction addLocalNotification: localNotification
                                  withType: @"test"];
     }];
-   
-    return YES;
+}
+
+- (void) application: (UIApplication *) application didRegisterUserNotificationSettings: (UIUserNotificationSettings *) notificationSettings {
+    [self scheduleTestLocalNotification];
 }
 
 - (void)applicationDidBecomeActive: (UIApplication *) application {
