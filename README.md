@@ -12,7 +12,7 @@ lets you add and cancel notification for custom types.
 ```objective-c
 VLDLocalNotificationsScheduler scheduler = [[VLDLocalNotificationsScheduler alloc] init];
 ```
-### Add local notification 
+### Add
 
 ```objective-c
 [scheduler perform: ^(VLDLocalNotificationsTransaction *transaction) {
@@ -20,6 +20,28 @@ VLDLocalNotificationsScheduler scheduler = [[VLDLocalNotificationsScheduler allo
   // ...
   [transaction addLocalNotification: localNotification
                            withType: @"test"];
+}];
+```
+
+### Cancel
+
+```objective-c
+[scheduler perform: ^(VLDLocalNotificationsTransaction *transaction) {
+  [transaction cancelLocalNotificationsWithType: @"test"];
+}];
+```
+
+### Add & Cancel
+
+```objective-c
+[scheduler perform: ^(VLDLocalNotificationsTransaction *transaction) {
+  UILocalNotification *localNotification = [[UILocalNotification alloc] init];
+  // ...
+  
+  [transaction addLocalNotification: localNotification
+                           withType: @"test"];
+                           
+  [transaction cancelLocalNotificationsWithType: @"test"];
 }];
 ```
 
