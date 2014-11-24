@@ -11,6 +11,12 @@ lets you add and cancel notification for types defined by your application.
 ## Example Usage
 ```objective-c
 VLDLocalNotificationsScheduler scheduler = [[VLDLocalNotificationsScheduler alloc] init];
+
+//...
+
+- (void)applicationDidBecomeActive: (UIApplication *) application {
+    [self.scheduler reschedule];
+}
 ```
 ### Add
 
