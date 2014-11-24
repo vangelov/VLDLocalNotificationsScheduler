@@ -56,9 +56,7 @@
                            @"    data BLOB"
                            @")"
          ];
-        
     }];
-    
 }
 
 - (NSString *) databasePath {
@@ -66,7 +64,7 @@
     return [paths[0] stringByAppendingPathComponent: @"VLDLocalNotificationsScheduler.db"];
 }
 
-- (void) perform: (void (^)(VLDLocalNotificationsTransaction *transaction)) transactionBlock {
+- (void) executeTransaction: (void (^)(VLDLocalNotificationsTransaction *transaction)) transactionBlock {
     [self.operationQueue addOperationWithBlock: ^{
         VLDLocalNotificationsTransaction *transaction = [[VLDLocalNotificationsTransaction alloc] init];
         transactionBlock(transaction);

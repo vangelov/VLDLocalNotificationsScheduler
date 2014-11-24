@@ -41,7 +41,7 @@
 }
 
 - (void) scheduleTestLocalNotification {
-    [self.scheduler perform: ^(VLDLocalNotificationsTransaction *transaction) {
+    [self.scheduler executeTransaction: ^(VLDLocalNotificationsTransaction *transaction) {
         UILocalNotification *localNotification = [[UILocalNotification alloc] init];
         localNotification.fireDate = [[NSDate date] dateByAddingTimeInterval: 10];
         localNotification.alertBody = @"Test message";

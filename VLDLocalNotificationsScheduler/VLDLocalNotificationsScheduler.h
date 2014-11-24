@@ -16,6 +16,6 @@
 @property (assign, nonatomic) NSInteger maxScheduledNotificationsCount;
 
 - (void) reschedule;
-- (void) perform: (void (^)(VLDLocalNotificationsTransaction *transaction)) transactionBlock;
+- (void) executeTransaction: (void (^)(VLDLocalNotificationsTransaction *transaction)) transactionBlock;
 
 @end
