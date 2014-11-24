@@ -16,9 +16,16 @@ VLDLocalNotificationsScheduler scheduler = [[VLDLocalNotificationsScheduler allo
 
 ```objective-c
 [scheduler perform: ^(VLDLocalNotificationsTransaction *transaction) {
-  UILocalNotification *localNotification = [[UILocalNotification alloc] init];
+  UILocalNotification *localNotification1 = [[UILocalNotification alloc] init];
   // ...
-  [transaction addLocalNotification: localNotification
+  
+  UILocalNotification *localNotification2 = [[UILocalNotification alloc] init];
+  // ...
+  
+  [transaction addLocalNotification: localNotification1
+                           withType: @"test"];
+                           
+  [transaction addLocalNotification: localNotification2
                            withType: @"test"];
 }];
 ```
@@ -35,13 +42,14 @@ VLDLocalNotificationsScheduler scheduler = [[VLDLocalNotificationsScheduler allo
 
 ```objective-c
 [scheduler perform: ^(VLDLocalNotificationsTransaction *transaction) {
+  [transaction cancelLocalNotificationsWithType: @"test"];
+  
   UILocalNotification *localNotification = [[UILocalNotification alloc] init];
   // ...
   
   [transaction addLocalNotification: localNotification
                            withType: @"test"];
-                           
-  [transaction cancelLocalNotificationsWithType: @"test"];
+                          
 }];
 ```
 
